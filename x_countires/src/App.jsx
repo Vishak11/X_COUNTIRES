@@ -6,12 +6,16 @@ import "./App.css";
 function App() {
   const [image, setImage] = useState([]);
   async function fetchCountryImages() {
+    try{ 
     const data = await fetch(
       "https://xcountries-backend.azurewebsites.net/all"
     );
     const countryDetails = await data.json();
-    console.log(countryDetails);
     setImage(countryDetails);
+  }
+  catch(e){
+    console.log(e)
+  }
   }
   useEffect(() => {
     fetchCountryImages();
