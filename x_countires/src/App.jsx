@@ -14,7 +14,7 @@ function App() {
     setImage(countryDetails);
   }
   catch(e){
-    console.log(e)
+    console.log("Error fetching data")
   }
   }
   useEffect(() => {
